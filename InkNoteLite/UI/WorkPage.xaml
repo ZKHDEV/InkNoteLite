@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="InkNoteLite.UI.WorkPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InkNoteLite.UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ink="using:Microsoft.Labs.InkToolbarControl"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}">
+            <TextBlock Text="{x:Bind currentNote.Title}" FontSize="20" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="{ThemeResource SystemControlForegroundChromeWhiteBrush}"></TextBlock>
+        </Grid>
+        <AppBar x:Name="appBar" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" Grid.Row="2" ClosedDisplayMode="Minimal" Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Label="保存" Icon="Save" x:Name="SaveBtn" Click="SaveBtn_Click"/>
+                <AppBarButton Label="删除" Icon="Delete" x:Name="DelBtn" Click="DelBtn_Click"/>
+            </StackPanel>
+        </AppBar>
+        <Grid Grid.Row="1">
+            <InkCanvas x:Name="InkCanvas"/>
+            <ink:InkToolbar x:Name="bar_InkTool" TargetInkCanvas="{x:Bind InkCanvas}" VerticalAlignment="Top" PenColor="Red"/>
+        </Grid>
+        <ContentDialog x:Name="AddDialog" Title="保存笔记" PrimaryButtonText="保存" SecondaryButtonText="取消" Opened="AddDialog_Opened" Closing="AddDialog_Closing" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.RowSpan="3">
+            <StackPanel>
+                <TextBlock Text="请输入名称 ："/>
+                <TextBox x:Name="TitleBox" Width="260" HorizontalAlignment="Left" Margin="0,5"/>
+                <TextBlock x:Name="WarnText" FontSize="10" Foreground="Red"/>
+            </StackPanel>
+        </ContentDialog>
+    </Grid>
+</Page>
