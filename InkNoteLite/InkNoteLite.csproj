@@ -11,7 +11,7 @@
     <AssemblyName>InkNoteLite</AssemblyName>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -224,7 +224,7 @@
     <SDKReference Include="InkToolbarControl, Version=0.3.2">
       <Name>InkToolbar Control</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.UWP.2015, Version=3.12.2">
+    <SDKReference Include="SQLite.UWP.2015, Version=3.14.1">
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>
